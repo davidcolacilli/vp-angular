@@ -1,0 +1,12 @@
+<!-- <pre style="display: block">
+    {{}}
+</pre> -->
+<div class="gallery" ng-if="gallery.hasImages">
+    <img ng-src="{{gallery.current}}" class="center-block img-rounded" />
+    <br/>
+    <ul class="clearfix list-unstyled">
+        <li ng-repeat="image in gallery.images" class="pull-left">
+            <img ng-src="{{image}}" ng-click="gallery.setCurrent(image)" class="img-thumbnail center-block"/>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,23 @@
+<section class="tab">
+    <ul class="nav nav-pills">
+        <li ng-class="{active: tabCtrl.isSet(1)}">
+            <a ng-click="tabCtrl.setTab(1)" href="">Description</a>
+        </li>
+        <li ng-class="{active: tabCtrl.isSet(2)}">
+            <a ng-click="tabCtrl.setTab(2)" href="">Specs</a>
+        </li>
+        <li ng-class="{active: tabCtrl.isSet(3)}">
+            <a ng-click="tabCtrl.setTab(3)" href="">Reviews</a>
+        </li>
+    </ul>
+    <description ng-show="tabCtrl.isSet(1)">
+        <!-- todo lo que haya dentro de esta tag es reemplazado por el contenido de description.html,
+        y metido dentro de la etigueta ng-transclude (ver description.html) -->
+        <div>
+            {{product.description}}
+        </div>
+    </description>
+    <div ng-show="tabCtrl.isSet(2)" product-specs></div>
+    <reviews ng-show="tabCtrl.isSet(3)" productreviews="product.reviews"></reviews><!-- de esta manera
+    no pasamos product a la directiva, sino solo las reviews-->
+</section>
