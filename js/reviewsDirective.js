@@ -33,6 +33,7 @@
                 reset();
                 return true;
             }
+            // console.log(vm);
         }
 
         return directive;

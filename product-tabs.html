@@ -18,6 +18,9 @@
         </div>
     </description>
     <div ng-show="tabCtrl.isSet(2)" product-specs></div>
+    <!-- <pre>
+        {{product.reviews}}
+    </pre> -->
     <reviews ng-show="tabCtrl.isSet(3)" productreviews="product.reviews"></reviews><!-- de esta manera
     no pasamos product a la directiva, sino solo las reviews-->
 </section>

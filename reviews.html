@@ -1,4 +1,7 @@
 <div>
+    <!-- <pre>
+        {{reviewCtrl | json}}
+    </pre> -->
     <h4>Reviews</h4>
     <ul class="list-unstyled">
         <!-- <pre>
@@ -6,7 +9,8 @@
         </pre> -->
         <li ng-repeat="review in reviewCtrl.productreviews">
             <blockquote>
-                <strong>{{review.stars}} Stars</strong>
+                <strong>{{review.stars}} Stars</strong><!-- review acá es cada uno de los objetos dentro del array "productReviews",
+                que están vinculados como "=" al scope del parent -->
                 {{review.body}}<br/>
                 <footer>
                     <cite>{{review.author}} on {{review.createdOn | date:'dd/MM/yyyy'}}</cite>
@@ -17,7 +21,7 @@
 
     <form name="reviewForm" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product) && reviewForm.$setPristine()" novalidate>
         <blockquote class="blockquote-reverse">
-            <strong>{{reviewCtrl.review.stars}} Stars</strong>
+            <strong>{{reviewCtrl.review.stars}} Stars</strong><!-- review acá es el nuevo objeto "review" -->
             {{reviewCtrl.review.body}}<br/>
             <footer>
                 <cite>{{reviewCtrl.review.author}}</cite>
